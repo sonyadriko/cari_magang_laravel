@@ -1,83 +1,76 @@
-
-<!DOCTYPE HTML>
-<html>
+@php
+if (Session::has('key')) {
+    header('Location: /dashboard');
+    exit;
+}
+@endphp
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Login</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<link href="{{asset('asset')}}/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<!-- Custom Theme files -->
-<link href="{{asset('asset')}}/css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<!--js-->
-<script src="{{asset('asset')}}/js/jquery-2.1.1.min.js"></script> 
-<!--icons-css-->
-<link href="{{asset('asset')}}/css/font-awesome.css" rel="stylesheet">
-<!--Google Fonts-->
-<link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
-<!--static chart-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cari Magang Login</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('adminlte')}}/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{{asset('adminlte')}}/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('adminlte')}}/dist/css/adminlte.min.css">
 </head>
-<body>	
-<div class="login-page">
-    <div class="login-main">  	
-    	 <div class="login-head">
-			</div>
-			<div class="login-block">
-				<form action="login.php" method="POST">
-					<h1>Login</h1>
-					<br>
-					<br>
-					<input type="text" name="email" placeholder="Email" required>
-					<input type="password" name="password" class="lock" placeholder="Password">
-					<input type="radio" id="bos" name="verify" value="2">
-					<label for="bos">Perusahaan</label><br>
-					<input type="radio" id="siswa" name="verify" value="3">
-					<label for="siswa">Siswa</label><br>
-					<br>
-					<input type="submit" name="submit" value="Login">	
-					
-					<br>
-					<!--<button type="submit" name="daftar_siswa" value="Daftar Siswa">Daftar Siswa<a href="daftar_siswa.php"></button></a>-->
-					<table width="100%">
-						<tr >
-							<td   style="padding-right: 20px; " width="50%" >
-					<a href="{{url('/register_siswa')}}" type="button" name="submit" style="text-align: center;">Daftar Siswa</a>
-								
-							</td>
-							<td  style="padding-left: 20px;" width="50%">
-					<a href="{{url('/register_bos')}}" type="button" name="submit" style="text-align: center;:">Daftar Bos</a>
-								
-							</td>
-						</tr>
-					</table>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="#" class="h1"><b>Cari</b>Magang</a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
 
-					<!--<a href="daftar_bos.php"><button type="submit" name="daftar_bos" value="Daftar Bos">Daftar Bos</button></a>-->
-
-				
-				</form>
-			</div>
-      </div>
+      <form action="{{url('/login')}}" method="post">
+        @csrf
+        <div class="input-group mb-3">
+          <input type="email" name="email" class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" name="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+      <div class="mb-1"></div>
+      
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
 </div>
-<!--inner block end here-->
-<!--copy rights start here-->
-<div class="copyrights">
-	 <p>© 2016 Shoppy. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-</div>	
-<!--COPY rights end here-->
+<!-- /.login-box -->
 
-<!--scrolling js-->
-		<script src="{{asset('asset')}}/js/jquery.nicescroll.js"></script>
-		<script src="{{asset('asset')}}/js/scripts.js"></script>
-		<!--//scrolling js-->
-<script src="{{asset('asset')}}/js/bootstrap.js"> </script>
-<!-- mother grid end here-->
+<!-- jQuery -->
+<script src="{{asset('adminlte')}}/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('adminlte')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('adminlte')}}/dist/js/adminlte.min.js"></script>
 </body>
 </html>
-
-
-                      
 						

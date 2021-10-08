@@ -2,15 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\MSiswaModel as Siswa;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function login(Request $request)
+    {
+        $role = Siswa::where('email',$request->email)->get();
+
+        $login = \Auth::attemp([
+                'email'=>$request->email,
+                'password'=>$request->password
+        ]);
+        
+        
+
+        if ($login) {
+            return redirect('/dashboard');
+        }else{
+            return redirect('/');
+        }
+    }
+
     public function index()
     {
         //
