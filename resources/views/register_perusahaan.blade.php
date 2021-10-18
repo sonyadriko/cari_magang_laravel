@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registrasi Siswa</title>
+  <title>Registrasi Perusahaan</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -35,7 +35,7 @@
       <a href="#" class="h1"><b>Cari</b> Magang</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Register Siswa Baru</p>
+      <p class="login-box-msg">Register Perusahaan Baru</p>
 
       <form action="{{url('/registersiswa')}}" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -49,12 +49,12 @@
           </div> -->
         </div>
         <div class="input-group mb-3">
-          <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap">
+          <input type="text" name="nama" class="form-control" placeholder="Nama Perusahaan">
         </div>
         <div class="input-group mb-3">
-          <input type="text" name="sekolah" class="form-control" placeholder="Asal Sekolah">
+          <input type="text" name="bidang" class="form-control" placeholder="Bidang Perusahaan">
         </div>
-        <div class="input-group mb-3">
+        <!-- <div class="input-group mb-3">
           <select class="form-control select2" name="jurusan" style="width: 100%; color: #ced4da;">
                     <option selected disabled>Jurusan</option>
                     <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
@@ -62,18 +62,21 @@
                     <option value="Animasi">Animasi</option>
                     <option value="Multimedia">Multimedia</option>
           </select>
-        </div>
+        </div> -->
         <div class="input-group mb-3">
           <input type="text" name="alamat" class="form-control" placeholder="Alamat">
         </div>
+        <div class="input-group mb-3">
+          <input type="text" name="kota" class="form-control" placeholder="Kota">
+        </div>
 
-       <div class="input-group mb-3">
+       <!-- <div class="input-group mb-3">
           <select class="form-control select2" name="jenis_kelamin" style="width: 100%; color: #ced4da;">
                     <option selected disabled>Jenis Kelamin</option>
                     <option value="laki-laki">Laki-laki</option>
                     <option value="perempuan">Perempuan</option>
           </select>
-        </div> 
+        </div>  -->
         <div class="input-group mb-3">
           <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
@@ -114,3 +117,4 @@
 </script>
 </body>
 </html>
+ 

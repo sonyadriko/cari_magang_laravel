@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\MLowonganModel as LowModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LowonganController extends Controller
 {
@@ -20,7 +21,7 @@ class LowonganController extends Controller
                        // ->orderBy('created_at','DESC')
                        ->get();
         // dd($divmst);
-        return view('lowongan_bos.index',compact('tb_lowongan'));
+        return view('perusahaan/lowongan_perusahaan.index',compact('tb_lowongan'));
     }
 
     /**
@@ -30,7 +31,11 @@ class LowonganController extends Controller
      */
     public function create()
     {
-        //
+         $data = [
+            'usrbos' => DB::table('user_bos')->get(),
+        ];
+        // dd($data);
+        return view('perusahaan/lowongan_perusahaan.create',$data);
     }
 
     /**

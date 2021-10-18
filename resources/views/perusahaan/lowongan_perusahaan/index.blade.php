@@ -16,16 +16,16 @@ active
 @section('content')
 <div class="card">
     <div class="card-header">
-        <a href="{{url('/lowongan_bos/create')}}" class="btn btn-primary btn-md">
+        <a href="{{url('/perusahaan/lowongan_perusahaan/create')}}" class="btn btn-primary btn-md">
             <i class="fa fa-plus"></i> Tambah Data
         </a>
-        <a href="{{url('/lowongan_bos/view')}}" target="_blank" class="btn btn-default btn-md">
+        <a href="{{url('/perusahaan/lowongan_perusahaan/view')}}" target="_blank" class="btn btn-default btn-md">
             <i class="fa fa-file"></i> View Report
         </a>
-        <a href="{{url('/lowongan_bos/excel')}}" class="btn bg-green color-palette">
+        <a href="{{url('/perusahaan/lowongan_perusahaan/excel')}}" class="btn bg-green color-palette">
             <i class="fa fa-file-excel"></i> Export To Excel
         </a>
-        <a href="{{url('/lowongan_bos/pdf')}}" class="btn btn-danger btn-md">
+        <a href="{{url('/perusahaan/lowongan_perusahaan/pdf')}}" class="btn btn-danger btn-md">
             <i class="fa fa-file-pdf"></i> Export to PDF
         </a>
     </div>

@@ -43,9 +43,9 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="{{url('/master/user')}}" class="nav-link @yield('master/user')">
+                <a href="{{url('/lowongan_bos')}}" class="nav-link @yield('lowongan_bos')">
                   <i class="fa fa-user nav-icon"></i>
-                  <p>User</p>
+                  <p>Lowongan</p>
                 </a>
               </li> 
               <li class="nav-item @yield('company/menu')">

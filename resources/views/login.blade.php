@@ -51,11 +51,20 @@ if (Session::has('key')) {
         <div class="row">
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
+    <br>
+    
+      <a href="{{url('/register_perusahaan')}}" class="btn btn-primary btn-block" title="Daftar sebagai perusahaan">Daftar sebagai Perusahaan</a>
+      <a href="{{url('/register_siswa')}}" class="btn btn-primary btn-block" title="Daftar sebagai perusahaan">Daftar sebagai Siswa</a>
+
+  
+
+    </div>
+
       <div class="mb-1"></div>
       
     </div>
